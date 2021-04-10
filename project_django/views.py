@@ -20,13 +20,7 @@ def edit(request, number):
   return HttpResponse(f"placeholder to edit blog: {number}")
 
 def destroy(request, number):
-  return redirect("blogs")
+  return redirect("/blogs")
 
 def info(request):
   return JsonResponse({"response": "JSON response from redirected_method", "status": True})
-
-# def weeb_stuff(request):
-#     return HttpResponse("sasuke-sama daisuke")  
-
-# def welp(request):
-#     return JsonResponse({"response": "JSON response from redirected_method", "status": True})
