@@ -3,4 +3,7 @@ from . import views
                     
 urlpatterns = [
     path('', views.index),
+    path('guess', views.guess),
+    path('reset', views.reset),
+    path('highscore', views.high_score),
 ]

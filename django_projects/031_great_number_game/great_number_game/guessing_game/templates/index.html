@@ -9,12 +9,57 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1> Welcome to the Great Number Game </h1>
-    <p>I am thinking of a number between 1 and 100</p>
-    <p>Take a guess!</p>
-    <form action="/guess">
-        <input type="number">
-        <button type="submit"></button>
-    </form>
+    <div id="container">
+        <h1> Welcome to the Great Number Game </h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        {% if 'game_status' in request.session %}
+            {% if request.session.game_status == 'won' or request.session.game_status == 'lost' %}
+                <div class="victory result_box">
+                    <h2>{{ request.session.hidden_number }} was the number!</h2>
+                    <p>You {{ request.session.game_status }}</p>
+                    <form action="/reset""><button type="submit">Play Again!</button></form>
+                </div>
+            {% elif request.session.game_status != 'new' %}
+                <div class="guess_again result_box">
+                    <h2>Too {{ request.session.game_status }}!</h2>
+                    <p>You have {{ request.session.remaining_guesses }} guesses remaining</p>
+                </div>
+            {% endif %} 
+        {% endif %}
+        {% if request.session.game_status != 'won' and request.session.game_status != 'lost' %}
+            <form action="/guess" method="POST" id="player_guess_form">
+                {% csrf_token %}
+                <input type="number" name="player_guess">
+                <button type="submit">submit</button>
+            </form>
+        {% endif %}
+        {% if request.session.game_status == 'won' %}
+            <p> You won in {{ guess_count }} tries!</p>
+            <form action="/highscore" method="POST" id="score_form">
+                {% csrf_token %}
+                <label for="high_score_input"> Enter Name: </label>
+                <input type="text" name="high_score_input">
+                <button type="submit">Submit</button>
+            </form>
+            <table id="score_table">
+                <thead>
+                    <th>Player</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    {% for players in request.session.score_history %}
+                        <tr>
+                            {% for player, score in players.items %}
+                                <td>{{ player }}</td>
+                                <td>{{ score }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        {% endif %}
+    </div>
 </body>
 </html>

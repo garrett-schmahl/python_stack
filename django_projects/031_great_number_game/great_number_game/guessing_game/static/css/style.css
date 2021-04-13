@@ -1,4 +1,51 @@
 *{
     margin:0px;
     padding:0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;
+}
+    #container h1{
+        margin-top: 100px;
+        margin-bottom: 25px;
+    }
+    .result_box{
+        display:flex;
+        align-items:center;
+        flex-wrap: wrap;
+        align-content:center;
+        justify-content:center;
+        width:300px;
+        height:300px;
+        margin:20px auto;
+        color:white;
+        border-style: solid;
+        border-color: black;
+        border-width: 3px;
+    }
+        .result_box p{
+            width:230px;
+        }
+        .victory{
+            background-color:green;
+        }
+        .guess_again{
+            background-color:red;
+        }
+#player_guess_form{
+    display:flex;
+    flex-direction:column;
+    width:60px;
+    margin:auto;
+}
+#player_guess_form button{
+    margin:5px;
+}
+#score_table{
+    margin: 30px 250px;
 }
