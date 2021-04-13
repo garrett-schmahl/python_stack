@@ -9,6 +9,65 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <p>hello world</p>
+    <div class="container">
+        <div class="header">
+            <h4>Your Gold:</h4>
+            <p class="goldbox black_border"> {{ request.session.player_gold }}</p>
+        </div>
+        <div class="activities_band">
+            <div class="activity black_border">
+                <div>
+                    <h3>Farm</h3>
+                    <p>(Earns 10-20 gold)</p>
+                </div>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="player_action" value="farm">
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+            <div class="activity black_border">
+                <div>
+                    <h3>Cave</h3>
+                    <p>(Earns 5-10 gold)</p>
+                </div>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="player_action" value="cave">
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+            <div class="activity black_border">
+                <div>
+                    <h3>House</h3>
+                    <p>(Earns 2-5 gold)</p>
+                </div>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="player_action" value="house">
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+            <div class="activity black_border">
+                <div>
+                    <h3>Casino</h3>
+                    <p>(Earns/takes 0-50 gold)</p>
+                </div>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="player_action" value="casino">
+                    <button type="submit">Find Gold!</button>
+                </form>
+            </div>
+        </div>
+        <div class="log_band">
+            <h4>Activities:</h4>
+            <ul class="black_border">
+                {% for index in request.session.activity_log %}
+                <li>{{ index }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
