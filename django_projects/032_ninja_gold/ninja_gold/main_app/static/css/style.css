@@ -37,6 +37,9 @@
             height:200px;
         }
     .log_band ul{
+        display:flex;
+        flex-direction: column-reverse;
+        min-height: 200px;
         max-height: 200px;
         overflow-y:scroll;
     }

@@ -34,3 +34,9 @@ def process(request):
     current_time = strftime("%Y/%d/%m %I:%M %p", localtime())
     request.session['activity_log'].append(f"{gain_string} {gold_gain} gold from the {request.POST['player_action']} ({current_time})")
     return redirect('/')
+
+def reset(request):
+    del request.session['activity_log']
+    del request.session['game_state']
+    del request.session['player_gold']
+    return redirect('/')
