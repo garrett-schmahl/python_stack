@@ -7,6 +7,12 @@
     border-width: 2px;
     border-color:black
 }
+.lost{
+    color:darkred;
+}
+.green{
+    color:darkgreen;
+}
 .container{
     display:flex;
     flex-direction:column;
@@ -35,11 +41,18 @@
             text-align: center;
             width:200px;
             height:200px;
+
         }
-    .log_band ul{
-        display:flex;
-        flex-direction: column-reverse;
-        min-height: 200px;
-        max-height: 200px;
-        overflow-y:scroll;
-    }
+        .log{
+        height: 200px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform: rotate(180deg);
+        direction:rtl;
+        text-align:left;
+        }
+            .log ul{
+            overflow: hidden;
+            transform: rotate(180deg);
+            }
+

@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ninja Gold</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/main.js' %}"></script>
 </head>
 <body>
     <div class="container">
@@ -64,11 +63,17 @@
         </div>
         <div class="log_band">
             <h4>Activities:</h4>
-            <ul class="black_border" id="log_box">
-                {% for index in request.session.activity_log %}
-                <li>{{ index }}</li>
-                {% endfor %}
-            </ul>
+            <div class="log black_border">
+                <ul>
+                    {% for index in request.session.activity_log %}
+                        {% if "Lost" in index %}
+                            <li class="lost">{{ index }}</li>
+                        {% else %}
+                            <li class="green">{{ index }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
 </body>
