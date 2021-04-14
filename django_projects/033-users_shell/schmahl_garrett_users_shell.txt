@@ -1,0 +1,227 @@
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\032_ninja_gold\ninja_gold>cd ..
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\032_ninja_gold>cd ..
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects>mkdir 033-users_shell
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects>cd 033-users_shell
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell>django-admin startproject users_shell
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell>cd users shell
+The system cannot find the path specified.
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell>cd users_shell
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py startapp main_app
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>code .
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py makemigrations
+Migrations for 'main_app':
+  main_app\migrations\0001_initial.py
+    - Create model Movie
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main_app, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying main_app.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from main_app.models import *
+>>> quit()
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>pip install ipython
+Collecting ipython
+  Downloading ipython-7.22.0-py3-none-any.whl (785 kB)
+     |████████████████████████████████| 785 kB 3.2 MB/s
+Collecting backcall
+  Downloading backcall-0.2.0-py2.py3-none-any.whl (11 kB)
+Collecting decorator
+  Downloading decorator-5.0.7-py3-none-any.whl (8.8 kB)
+Collecting pygments
+  Downloading Pygments-2.8.1-py3-none-any.whl (983 kB)
+     |████████████████████████████████| 983 kB ...
+Collecting prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0
+  Downloading prompt_toolkit-3.0.18-py3-none-any.whl (367 kB)
+     |████████████████████████████████| 367 kB ...
+Collecting colorama; sys_platform == "win32"
+  Using cached colorama-0.4.4-py2.py3-none-any.whl (16 kB)
+Collecting traitlets>=4.2
+  Downloading traitlets-5.0.5-py3-none-any.whl (100 kB)
+     |████████████████████████████████| 100 kB ...
+Collecting pickleshare
+  Downloading pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+Collecting jedi>=0.16
+  Downloading jedi-0.18.0-py2.py3-none-any.whl (1.4 MB)
+     |████████████████████████████████| 1.4 MB ...
+Requirement already satisfied: setuptools>=18.5 in c:\users\zuhayr\documents\codingdojo\002-python\my_environments\py3djangoenv\lib\site-packages (from ipython) (49.2.1)
+Collecting wcwidth
+  Downloading wcwidth-0.2.5-py2.py3-none-any.whl (30 kB)
+Collecting ipython-genutils
+  Downloading ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+Collecting parso<0.9.0,>=0.8.0
+  Downloading parso-0.8.2-py2.py3-none-any.whl (94 kB)
+     |████████████████████████████████| 94 kB ...
+Installing collected packages: backcall, decorator, pygments, wcwidth, prompt-toolkit, colorama, ipython-genutils, traitlets, pickleshare, parso, jedi, ipython
+Successfully installed backcall-0.2.0 colorama-0.4.4 decorator-5.0.7 ipython-7.22.0 ipython-genutils-0.2.0 jedi-0.18.0 parso-0.8.2 pickleshare-0.7.5 prompt-toolkit-3.0.18 pygments-2.8.1 traitlets-5.0.5 wcwidth-0.2.5
+WARNING: You are using pip version 20.2.3; however, version 21.0.1 is available.
+You should consider upgrading via the 'c:\users\zuhayr\documents\codingdojo\002-python\my_environments\py3djangoenv\scripts\python.exe -m pip install --upgrade pip' command.
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.22.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from main_app.models import *
+
+In [2]: quit()
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py makemigrations
+Migrations for 'main_app':
+  main_app\migrations\0002_users.py
+    - Create model Users
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main_app, sessions
+Running migrations:
+  Applying main_app.0002_users... OK
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\033-users_shell\users_shell>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.22.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from main_app.models import Users
+
+In [2]:                                                                                                           In [2]: Users.objects.create(first_name="Josiah", last_name="Wheatley", email_address="jwheats@pm.me", age="25")
+Out[2]: <Users: Users object (1)>
+
+In [3]: Users.objects.first()
+Out[3]: <Users: Users object (1)>
+
+In [4]: Users.objects.all()
+Out[4]: <QuerySet [<Users: Users object (1)>]>
+
+In [5]: Users.objects.all().values()
+Out[5]: <QuerySet [{'id': 1, 'first_name': 'Josiah', 'last_name': 'Wheatley', 'email_address': 'jwheats@pm.me', 'age': 25, 'created_at': datetime.datetime(2021, 4, 14, 23, 10, 4, 237511, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 4, 14, 23, 10, 4, 237511, tzinfo=<UTC>)}]>
+
+In [6]: Users.objects.create(first_name="Marcus", last_name="Felix", email_address="ahhhhhh@ahhh.ah", age="33")
+Out[6]: <Users: Users object (2)>
+
+In [7]: Users.objects.create(first_name="Samus", last_name="Aran", email_address="samus@not.metroid", age="29")
+Out[7]: <Users: Users object (3)>
+
+In [8]: Users.objects.all()
+Out[8]: <QuerySet [<Users: Users object (1)>, <Users: Users object (2)>, <Users: Users object (3)>]>
+
+In [9]: Users.objects.all().values()
+Out[9]: <QuerySet [{'id': 1, 'first_name': 'Josiah', 'last_name': 'Wheatley', 'email_address': 'jwheats@pm.me', 'age': 25, 'created_at': datetime.datetime(2021, 4, 14, 23, 10, 4, 237511, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 4, 14, 23, 10, 4, 237511, tzinfo=<UTC>)}, {'id': 2, 'first_name': 'Marcus', 'last_name': 'Felix', 'email_address': 'ahhhhhh@ahhh.ah', 'age': 33, 'created_at': datetime.datetime(2021, 4, 14, 23, 12, 59, 259501, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 4, 14, 23, 12, 59, 259501, tzinfo=<UTC>)}, {'id': 3, 'first_name': 'Samus', 'last_name': 'Aran', 'email_address': 'samus@not.metroid', 'age': 29, 'created_at': datetime.datetime(2021, 4, 14, 23, 13, 53, 682188, tzinfo=<UTC>), 'updated_at': datetime.datetime(2021, 4, 14, 23, 13, 53, 682188, tzinfo=<UTC>)}]>
+
+In [10]: Users.objects.first()
+Out[10]: <Users: Users object (1)>
+
+In [11]: User.objects.first().values()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-11-e48fe8c9dac2> in <module>
+----> 1 User.objects.first().values()
+
+NameError: name 'User' is not defined
+
+In [12]: Users.objecets.first().values()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-12-cff015bc90ed> in <module>
+----> 1 Users.objecets.first().values()
+
+AttributeError: type object 'Users' has no attribute 'objecets'
+
+In [13]: Users.objects.first().values()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-13-12bc1cf16c17> in <module>
+----> 1 Users.objects.first().values()
+
+AttributeError: 'Users' object has no attribute 'values'
+
+In [14]: Users.objects.last()
+Out[14]: <Users: Users object (3)>
+
+In [15]: Users.objects.get(id=3)
+Out[15]: <Users: Users object (3)>
+
+In [16]: user_to_modify = Users.objects.get(id=3)
+
+In [17]: user_to_modify.last_name="Pancakes"
+
+In [18]: Users.objects.get(id=3).last_name
+Out[18]: 'Aran'
+
+In [19]: user_to_modify.last_name="Pancakes"
+
+In [20]: user_to_modify.save()
+
+In [21]: Users.objects.get(id=3).last_name
+Out[21]: 'Pancakes'
+
+In [22]: user_to_delete = Users.objects.get(id=2)
+
+In [23]: user-to_delete.delete()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-23-ef7beba72536> in <module>
+----> 1 user-to_delete.delete()
+
+NameError: name 'user' is not defined
+
+In [24]: user_to_delete.delete()
+Out[24]: (1, {'main_app.Users': 1})
+
+In [25]: Users.objects.all()
+Out[25]: <QuerySet [<Users: Users object (1)>, <Users: Users object (3)>]>
+
+In [26]: Users.objects.create(first_name="Marcus", last_name="Felix", email_address="ahhhhhh@ahhh.ah", age="33")
+Out[26]: <Users: Users object (4)>
+
+In [27]: all_users = Users.objects.all()
+
+In [28]: all_users.first_name
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-28-ca2de7bc51fc> in <module>
+----> 1 all_users.first_name
+
+AttributeError: 'QuerySet' object has no attribute 'first_name'
+
+In [29]: all_users.order_by("first_name")
+Out[29]: <QuerySet [<Users: Users object (1)>, <Users: Users object (4)>, <Users: Users object (3)>]>
+
+In [30]: all_users.order_by("-first_name")
+Out[30]: <QuerySet [<Users: Users object (3)>, <Users: Users object (4)>, <Users: Users object (1)>]>
+
+In [31]:  
