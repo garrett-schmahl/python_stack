@@ -25,8 +25,9 @@
     }
         .goldbox{
             margin-left: 10px;
+            min-width:50px;
             padding: 3px;
-
+            margin-right:10px;
         }
     .activities_band{
         display:flex;
