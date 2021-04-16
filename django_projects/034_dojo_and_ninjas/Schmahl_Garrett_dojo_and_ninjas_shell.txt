@@ -1,0 +1,452 @@
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects>mkdir 034_dojo_and_ninjas
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects>cd 034_dojo_and_ninjas
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas>django-admin startproject dojo_and_ninjas
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas>cd dojo_and_ninjas
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+April 15, 2021 - 11:35:28
+Django version 3.2, using settings 'dojo_and_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[15/Apr/2021 11:35:37] "GET / HTTP/1.1" 200 10697
+[15/Apr/2021 11:35:37] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[15/Apr/2021 11:35:37] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+[15/Apr/2021 11:35:37] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+[15/Apr/2021 11:35:37] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manapge.py startapp main_app
+C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\python.exe: can't open file 'C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\manapge.py': [Errno 2] No such file or directory
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py startapp main_app
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>code .
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+April 15, 2021 - 11:39:05
+Django version 3.2, using settings 'dojo_and_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: index() takes 0 positional arguments but 1 was given
+[15/Apr/2021 11:39:06] "GET / HTTP/1.1" 500 59932
+C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\views.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+April 15, 2021 - 11:39:30
+Django version 3.2, using settings 'dojo_and_ninjas.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[15/Apr/2021 11:39:32] "GET / HTTP/1.1" 200 4
+C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\commands\runserver.py", line 110, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    autoreload.check_errors(django.setup)()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\registry.py", line 114, in populate
+    app_config.import_models()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 786, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 923, in get_code
+  File "<frozen importlib._bootstrap_external>", line 853, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py", line 5
+        created_at = models.DateTimeField(auto_now_add=True)
+    ^
+SyntaxError: invalid non-printable character U+00A0
+C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\commands\runserver.py", line 110, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    autoreload.check_errors(django.setup)()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\registry.py", line 114, in populate
+    app_config.import_models()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py", line 3, in <module>
+    class Dojo(models.model):
+AttributeError: module 'django.db.models' has no attribute 'model'
+C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\commands\runserver.py", line 110, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    autoreload.check_errors(django.setup)()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\registry.py", line 114, in populate
+    app_config.import_models()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py", line 3, in <module>
+    class Dojo(models.model):
+AttributeError: module 'django.db.models' has no attribute 'model'
+C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py changed, reloading.
+Watching for file changes with StatReloader
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\commands\runserver.py", line 110, in inner_run
+    autoreload.raise_last_exception()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 87, in raise_last_exception
+    raise _exception[1]
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\__init__.py", line 375, in execute
+    autoreload.check_errors(django.setup)()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\registry.py", line 114, in populate
+    app_config.import_models()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py", line 3, in <module>
+    class Dojo(models.model):
+AttributeError: module 'django.db.models' has no attribute 'model'
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\__init__.py", line 419, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\__init__.py", line 395, in execute
+    django.setup()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\registry.py", line 114, in populate
+    app_config.import_models()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\apps\config.py", line 301, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas\main_app\models.py", line 3, in <module>
+    class Dojo(models.model):
+AttributeError: module 'django.db.models' has no attribute 'model'
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py makemigrations
+Migrations for 'main_app':
+  main_app\migrations\0001_initial.py
+    - Create model Dojo
+    - Create model Ninja
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main_app, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying main_app.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.22.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: Dojo.objects.create(name="Villiage Hidden in the Weebs")
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-b06caeba54c7> in <module>
+----> 1 Dojo.objects.create(name="Villiage Hidden in the Weebs")
+
+NameError: name 'Dojo' is not defined
+
+In [2]: Dojo.objects.create(dojo_name="Villiage Hidden in the Weebs")
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-2-aa792a994347> in <module>
+----> 1 Dojo.objects.create(dojo_name="Villiage Hidden in the Weebs")
+
+NameError: name 'Dojo' is not defined
+
+In [3]: from main-app.models import *
+  File "<ipython-input-3-e4a473fa9c3a>", line 1
+    from main-app.models import *
+             ^
+SyntaxError: invalid syntax
+
+
+In [4]: from main_app.models import *
+
+In [5]: Dojo.objects.create(dojo_name="Villiage Hidden in the Weebs")
+Out[5]: <Dojo: Dojo object (1)>
+
+In [6]: Dojo.objects.create(dojo_name="Village Hidden in the Cats")
+Out[6]: <Dojo: Dojo object (2)>
+
+In [7]: Dojo.objects.create(dojo_name="Village Hidden in the FBI")
+Out[7]: <Dojo: Dojo object (3)>
+
+In [8]: Dojo.objects.all().delete()
+Out[8]: (3, {'main_app.Dojo': 3})
+
+In [9]: Dojo.onjects.al()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-9-380bdb350667> in <module>
+----> 1 Dojo.onjects.al()
+
+AttributeError: type object 'Dojo' has no attribute 'onjects'
+
+In [10]: Dojo.objects.al()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-10-697b8da9e68c> in <module>
+----> 1 Dojo.objects.al()
+
+AttributeError: 'Manager' object has no attribute 'al'
+
+In [11]: Dojo.objects.all()
+Out[11]: <QuerySet []>
+
+In [12]: Dojo.objects.create(dojo_name="Village Hidden in the Weebs")
+Out[12]: <Dojo: Dojo object (4)>
+
+In [13]: Dojo.objects.create(dojo_name="Village Hidden in my Greaves")
+Out[13]: <Dojo: Dojo object (5)>
+
+In [14]: Dojo.objects.create(dojo_name="Monty Pythons Unbelievable Village")
+Out[14]: <Dojo: Dojo object (6)>
+
+In [15]: Ninja.objects.create(ninja_trainee="Sasuke-senpai :3", dojo=Dojo.objects.get(id=4))
+Out[15]: <Ninja: Ninja object (1)>
+
+In [16]: Ninja.objects.create(ninja_trainee="Heavy as a Rock Lee", dojo=Dojo.objects.get(id=4))
+Out[16]: <Ninja: Ninja object (2)>
+
+In [17]: Ninja.objects.create(ninja_trainee="Sakura-chan desu", dojo=Dojo.objects.get(id=4))
+Out[17]: <Ninja: Ninja object (3)>
+
+In [18]: Ninja.objects.create(ninja_trainee="Shin Gard", dojo=Dojo.objects.get(id=5))
+Out[18]: <Ninja: Ninja object (4)>
+
+In [19]: Ninja.objects.create(ninja_trainee="Legolas Brace", dojo=Dojo.objects.get(id=5))
+Out[19]: <Ninja: Ninja object (5)>
+
+In [20]: Ninja.objects.create(ninja_trainee="Boots", dojo=Dojo.objects.get(id=5))
+Out[20]: <Ninja: Ninja object (6)>
+
+In [21]: Ninja.objects.create(ninja_trainee="First of his Name, Chuck", dojo=Dojo.objects.get(id=6))
+Out[21]: <Ninja: Ninja object (7)>
+
+In [22]: Ninja.objects.create(ninja_trainee="Lord of all he Surveys, Bill", dojo=Dojo.objects.get(id=6))
+Out[22]: <Ninja: Ninja object (8)>
+
+In [23]: Ninja.objects.create(ninja_trainee="Clarence, dentist", dojo=Dojo.objects.get(id=6))
+Out[23]: <Ninja: Ninja object (9)>
+
+In [24]: Ninja.objects.get(id=4).all()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-24-a0180a1e246b> in <module>
+----> 1 Ninja.objects.get(id=4).all()
+
+AttributeError: 'Ninja' object has no attribute 'all'
+
+In [25]: Ninja.objects.get(id=4).ninjas.all()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-25-46b4a826640e> in <module>
+----> 1 Ninja.objects.get(id=4).ninjas.all()
+
+AttributeError: 'Ninja' object has no attribute 'ninjas'
+
+In [26]: current_dojo = Ninjas.objects.get(id=4)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-26-2881835020e5> in <module>
+----> 1 current_dojo = Ninjas.objects.get(id=4)
+
+NameError: name 'Ninjas' is not defined
+
+In [27]: current_dojo = Ninja.objects.get(id=4)
+
+In [28]: current_dojo.ninjas.all()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-28-cbf60369fc8b> in <module>
+----> 1 current_dojo.ninjas.all()
+
+AttributeError: 'Ninja' object has no attribute 'ninjas'
+
+In [29]: current_dojo
+Out[29]: <Ninja: Ninja object (4)>
+
+In [30]: current_dojo.dojo_name
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-30-bd449bad5c15> in <module>
+----> 1 current_dojo.dojo_name
+
+AttributeError: 'Ninja' object has no attribute 'dojo_name'
+
+In [31]: current_dojo.dojo_name                                                                                              In [31]: current_dojo.dojo_name                                                                                      In [31]:
+
+In [31]: current_dojo = Dojo.objects.get(id=4)
+
+In [32]: current_dojo.dojo_name
+Out[32]: 'Village Hidden in the Weebs'
+
+In [33]: current_dojo.ninjas
+Out[33]: <django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager at 0x1e308569ee0>
+
+In [34]: current_dojo.ninjas.all()
+Out[34]: <QuerySet [<Ninja: Ninja object (1)>, <Ninja: Ninja object (2)>, <Ninja: Ninja object (3)>]>
+
+In [35]: current_dojo = Dojo.objects.last()
+
+In [36]: current_dojo.ninjas.all()
+Out[36]: <QuerySet [<Ninja: Ninja object (7)>, <Ninja: Ninja object (8)>, <Ninja: Ninja object (9)>]>
+
+In [37]: quit()
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py makemigrations
+Migrations for 'main_app':
+  main_app\migrations\0002_dojo_desc.py
+    - Add field desc to dojo
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main_app, sessions
+Running migrations:
+  Applying main_app.0002_dojo_desc... OK
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\034_dojo_and_ninjas\dojo_and_ninjas>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.22.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from main_app.models import *
+
+In [2]: Dojo.objects.create(dojo_name="Mike's Hard Dojo")
+Out[2]: <Dojo: Dojo object (7)>
+
+In [3]:  
