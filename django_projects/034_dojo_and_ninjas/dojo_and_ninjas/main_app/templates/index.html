@@ -68,14 +68,14 @@
                     <div class="col-md-auto">
                         <h4 class="row justify-content-md-center">{{ dojo.dojo_name }}</h4>
                             <div class="row justify-content-md-center">
-                            <p class="col">Contains {{ dojo.ninjas.all.count }} Ninjas</p>
-                            <form action="/delete" method="post" class="col">
-                                {% csrf_token %}
-                                <input type="hidden" value={{dojo.id}} name="delete_link">
-                                <input type="hidden" value="dojo" name="delete_type">
-                                <button type="submit" class="btn btn-link">Delete</button>
-                            </form>
-                        </div>
+                                <p class="col">Contains {{ dojo.ninjas.all.count }} Ninjas</p>
+                                <form action="/delete" method="post" class="col">
+                                    {% csrf_token %}
+                                    <input type="hidden" value={{dojo.id}} name="delete_link">
+                                    <input type="hidden" value="dojo" name="delete_type">
+                                    <button type="submit" class="btn btn-link">Delete</button>
+                                </form>
+                            </div>
                         <ul>
                             {% for ninja in dojo.ninjas.all %}
                                 <div class ="row justify-content-md-center">
