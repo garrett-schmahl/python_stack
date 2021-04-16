@@ -1,0 +1,415 @@
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py runserver
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 954, in _bootstrap_inner
+    self.run()
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\threading.py", line 892, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\commands\runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\management\base.py", line 419, in check
+    all_issues = checks.run_checks(
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\checks\registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\checks\urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\core\checks\urls.py", line 23, in check_resolver
+    return check_method()
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\urls\resolvers.py", line 412, in check
+    for pattern in self.url_patterns:
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\urls\resolvers.py", line 598, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\utils\functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\urls\resolvers.py", line 591, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "C:\Users\Zuhayr\AppData\Local\Programs\Python\Python39\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors\books_and_authors\urls.py", line 21, in <module>
+    path("", include(main_app.urls)),
+NameError: name 'main_app' is not defined
+C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors\books_and_authors\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+April 16, 2021 - 11:59:17
+Django version 3.2, using settings 'books_and_authors.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+[16/Apr/2021 11:59:20] "GET / HTTP/1.1" 200 11
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py makemigrations
+Migrations for 'main_app':
+  main_app\migrations\0001_initial.py
+    - Create model Book
+    - Create model Author
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main_app, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying main_app.0001_initial... OK
+  Applying sessions.0001_initial... OK
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.22.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: from models.py import *
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+<ipython-input-1-9ea81a2148c6> in <module>
+----> 1 from models.py import *
+
+ModuleNotFoundError: No module named 'models'
+
+In [2]: from main_app.models import *
+
+In [3]: Book.Objects.create(title="C#", descirption="An instruction manual for coding in C#.")
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-3-53e9502482de> in <module>
+----> 1 Book.Objects.create(title="C#", descirption="An instruction manual for coding in C#.")
+
+AttributeError: type object 'Book' has no attribute 'Objects'
+
+In [4]: Book.objects.create(title="C#", descirption="An instruction manual for coding in C#.")
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-4-cd4facdc1194> in <module>
+----> 1 Book.objects.create(title="C#", descirption="An instruction manual for coding in C#.")
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\manager.py in manager_method(self, *args, **kwargs)
+     83         def create_method(name, method):
+     84             def manager_method(self, *args, **kwargs):
+---> 85                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+     86             manager_method.__name__ = method.__name__
+     87             manager_method.__doc__ = method.__doc__
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\query.py in create(self, **kwargs)
+    449         and returning the created object.
+    450         """
+--> 451         obj = self.model(**kwargs)
+    452         self._for_write = True
+    453         obj.save(force_insert=True, using=self.db)
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\base.py in __init__(self, *args, **kwargs)
+    501                     pass
+    502             for kwarg in kwargs:
+--> 503                 raise TypeError("%s() got an unexpected keyword argument '%s'" % (cls.__name__, kwarg))
+    504         super().__init__()
+    505         post_init.send(sender=cls, instance=self)
+
+TypeError: Book() got an unexpected keyword argument 'descirption'
+
+In [5]: Book.objects.create(title="C#", description="An instruction manual for coding in C#.")
+Out[5]: <Book: Book object (1)>
+
+In [6]: Book.objects.create(title="Java", description="An instruction manual for coding in Java.")
+Out[6]: <Book: Book object (2)>
+
+In [7]: Book.objects.create(title="Python", description="A book about a deadly nonvenomous breed of snake.")
+Out[7]: <Book: Book object (3)>
+
+In [8]: Book.objects.create(title="PHP", description="An instruction manual for coding in PHP.")
+Out[8]: <Book: Book object (4)>
+
+In [9]: Book.objects.create(title="Ruby", description="An instruction manual for coding in, strangely enough, Javascript.")
+Out[9]: <Book: Book object (5)>
+
+In [10]: Author.objects.create(first_name="Jane", last_name="Austen")
+Out[10]: <Author: Author object (1)>
+
+In [11]: Author.objects.create(first_name="Emily", last_name="Dickinson")
+Out[11]: <Author: Author object (2)>
+
+In [12]: Author.objects.create(first_name="Fyodor", last_name="Dostoevsky")
+Out[12]: <Author: Author object (3)>
+
+In [13]: Author.objects.create(first_name="William", last_name="Shakespeare")
+Out[13]: <Author: Author object (4)>
+
+In [14]: Author.objects.create(first_name="Lau", last_name="Tzu")
+Out[14]: <Author: Author object (5)>
+
+In [15]: quit()
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py makemigrations
+Migrations for 'main_app':
+  main_app\migrations\0002_author_notes.py
+    - Add field notes to author
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main_app, sessions
+Running migrations:
+  Applying main_app.0002_author_notes... OK
+
+(py3DjangoEnv) C:\Users\Zuhayr\Documents\CodingDojo\002-python\django_projects\035_books_and_authors\books_and_authors>python manage.py shell
+Python 3.9.3 (tags/v3.9.3:e723086, Apr  2 2021, 11:35:20) [MSC v.1928 64 bit (AMD64)]
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.22.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: Author.objects.get(id=4).first_name = "Bill"
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-1-16a0e3b5bbbc> in <module>
+----> 1 Author.objects.get(id=4).first_name = "Bill"
+
+NameError: name 'Author' is not defined
+
+In [2]: author_tweak = Author.objects.get(id=4)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-2-7bc306da61b6> in <module>
+----> 1 author_tweak = Author.objects.get(id=4)
+
+NameError: name 'Author' is not defined
+
+In [3]: from main_app.models import *
+
+In [4]: Author.objects.get(id=4).first_name = "Bill"
+
+In [5]: Author.objects.get(id=4).save()
+
+In [6]: this_author = Author.objects.get(id=1)
+
+In [7]: this_book= Book.objects.get(id=1)
+
+In [8]: this_author.books.add(this_book)
+
+In [9]: this_book= Book.objects.get(id=2)
+
+In [10]: this_author.books.add(this_book)
+
+In [11]: this_author = Author.objects.get(id=2)
+
+In [12]: this_author.books.add(this_book)
+
+In [13]: this_book= Book.objects.get(id=1)
+
+In [14]: this_author.books.add(this_book)
+
+In [15]: this_book= Book.objects.get(id=3)
+
+In [16]: this_author.books.add(this_book)
+
+In [17]: this_author = Author.objects.get(id=3)
+
+In [18]: this_author.books.add(this_book)
+
+In [19]: this_book= Book.objects.get(id=1)
+
+In [20]: this_author.books.add(this_book)
+
+In [21]: this_book= Book.objects.get(id=2)
+
+In [22]: this_author.books.add(this_book)
+
+In [23]: this_book= Book.objects.get(id=4)
+
+In [24]: this_author.books.add(this_book)
+
+In [25]: this_author = Author.objects.get(id=4)
+
+In [26]: this_book= Book.objects.all()
+
+In [27]: this_author.books.add(this_book)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\__init__.py in get_prep_value(self, value)
+   1822         try:
+-> 1823             return int(value)
+   1824         except (TypeError, ValueError) as e:
+
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'QuerySet'
+
+The above exception was the direct cause of the following exception:
+
+TypeError                                 Traceback (most recent call last)
+<ipython-input-27-ffddce007371> in <module>
+----> 1 this_author.books.add(this_book)
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py in add(self, through_defaults, *objs)
+    948             db = router.db_for_write(self.through, instance=self.instance)
+    949             with transaction.atomic(using=db, savepoint=False):
+--> 950                 self._add_items(
+    951                     self.source_field_name, self.target_field_name, *objs,
+    952                     through_defaults=through_defaults,
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py in _add_items(self, source_field_name, target_field_name, through_defaults, *objs)
+   1124
+   1125             through_defaults = dict(resolve_callables(through_defaults or {}))
+-> 1126             target_ids = self._get_target_ids(target_field_name, objs)
+   1127             db = router.db_for_write(self.through, instance=self.instance)
+   1128             can_ignore_conflicts, must_send_signals, can_fast_add = self._get_add_plan(db, source_field_name)
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py in _get_target_ids(self, target_field_name, objs)
+   1071                     )
+   1072                 else:
+-> 1073                     target_ids.add(target_field.get_prep_value(obj))
+   1074             return target_ids
+   1075
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related.py in get_prep_value(self, value)
+    975
+    976     def get_prep_value(self, value):
+--> 977         return self.target_field.get_prep_value(value)
+    978
+    979     def contribute_to_related_class(self, cls, related):
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\__init__.py in get_prep_value(self, value)
+   1823             return int(value)
+   1824         except (TypeError, ValueError) as e:
+-> 1825             raise e.__class__(
+   1826                 "Field '%s' expected a number but got %r." % (self.name, value),
+   1827             ) from e
+
+TypeError: Field 'id' expected a number but got <QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>, <Book: Book object (5)>]>.
+
+In [28]: this_book= Book.objects.all
+
+In [29]: this_author.books.add(this_book)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\__init__.py in get_prep_value(self, value)
+   1822         try:
+-> 1823             return int(value)
+   1824         except (TypeError, ValueError) as e:
+
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'method'
+
+The above exception was the direct cause of the following exception:
+
+TypeError                                 Traceback (most recent call last)
+<ipython-input-29-ffddce007371> in <module>
+----> 1 this_author.books.add(this_book)
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py in add(self, through_defaults, *objs)
+    948             db = router.db_for_write(self.through, instance=self.instance)
+    949             with transaction.atomic(using=db, savepoint=False):
+--> 950                 self._add_items(
+    951                     self.source_field_name, self.target_field_name, *objs,
+    952                     through_defaults=through_defaults,
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py in _add_items(self, source_field_name, target_field_name, through_defaults, *objs)
+   1124
+   1125             through_defaults = dict(resolve_callables(through_defaults or {}))
+-> 1126             target_ids = self._get_target_ids(target_field_name, objs)
+   1127             db = router.db_for_write(self.through, instance=self.instance)
+   1128             can_ignore_conflicts, must_send_signals, can_fast_add = self._get_add_plan(db, source_field_name)
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related_descriptors.py in _get_target_ids(self, target_field_name, objs)
+   1071                     )
+   1072                 else:
+-> 1073                     target_ids.add(target_field.get_prep_value(obj))
+   1074             return target_ids
+   1075
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\related.py in get_prep_value(self, value)
+    975
+    976     def get_prep_value(self, value):
+--> 977         return self.target_field.get_prep_value(value)
+    978
+    979     def contribute_to_related_class(self, cls, related):
+
+~\Documents\CodingDojo\002-python\my_environments\py3DjangoEnv\lib\site-packages\django\db\models\fields\__init__.py in get_prep_value(self, value)
+   1823             return int(value)
+   1824         except (TypeError, ValueError) as e:
+-> 1825             raise e.__class__(
+   1826                 "Field '%s' expected a number but got %r." % (self.name, value),
+   1827             ) from e
+
+TypeError: Field 'id' expected a number but got <bound method BaseManager.all of <django.db.models.manager.Manager object at 0x000001C38590A640>>.
+
+In [30]: this_book= Book.objects.get(id=1)
+
+In [31]: this_author.books.add(this_book)
+
+In [32]: this_book= Book.objects.get(id=2)
+
+In [33]: this_author.books.add(this_book)
+
+In [34]: this_book= Book.objects.get(id=3)
+
+In [35]: this_author.books.add(this_book)
+
+In [36]: this_book= Book.objects.get(id=4)
+
+In [37]: this_author.books.add(this_book)
+
+In [38]: this_book= Book.objects.get(id=5)
+
+In [39]: this_author.books.add(this_book)
+
+In [40]: this_book= Book.objects.get(id=3)
+
+In [41]: this_book.authors.all()
+Out[41]: <QuerySet [<Author: Author object (2)>, <Author: Author object (3)>, <Author: Author object (4)>]>
+
+In [42]: this_author = Author.objects.get(id=2)
+
+In [43]: this_book.books.remov(this_author)
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-43-4a10d9e1a842> in <module>
+----> 1 this_book.books.remov(this_author)
+
+AttributeError: 'Book' object has no attribute 'books'
+
+In [44]: this_book.authors.remove(this_author)
+
+In [45]: this_author = Author.objects.get(id=5)
+
+In [46]: this_book = Book.objects.get(id=2)
+
+In [47]: this_book.authors.add(this_author)
+
+In [48]: this_author = Author.objects.get(id=3)
+
+In [49]:
+
+In [49]: this_author.books.all()
+Out[49]: <QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>]>
+
+In [50]: this_book = Book.objects.get(id=5)
+
+In [51]: this_book.authors.all()
+Out[51]: <QuerySet [<Author: Author object (4)>]>
+
+In [52]:  
