@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if style == "books" %}Books{% else %}Authors{% endif %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h1>{%if style == "books" %}Add a Book{% else %}Add an Author{% endif %}</h1>
+            <form action="/{{ style }}/add" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="input_name_box">{%if style == "books" %}Title{% else %}First Name{% endif %}</label>
+                    <input type="text" name="input_name_box" id="input_name_box">
+                </div>
+                {%if style == "authors" %}
+                <div>
+                    <label for="last_name"> Last Name </label>
+                    <input type="text" name="last_name" id="last_name">
+                </div>
+                {% endif %}
+                <label for="description_box" id="description_box_label">{%if style == "books" %}Description{% else %}Notes{% endif %}</label>
+                <textarea name="description_box" rows="4"></textarea>
+                <button class="submit_new">Add</button>
+            </form>
+            {% if style == "books" %}
+                <a href="/authors">Go to Authors</a>
+            {% else %}
+                <a href="/books">Go to Books</a>
+            {% endif %}
+        </div>
+        <div class="col">
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>{%if style == "books" %}Title{% else %}Name{% endif %}</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    {% for item in table_data %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td><a href="/{{ style }}/{{ item.id }}">{%if style == "books" %}{{ item.title }}{% else %}{{ item.first_name }} {{item.last_name}}{% endif %}</a></td>
+                        <td>
+                            <form action="/{{ style }}/delete" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="delete_id" value={{ item.id }}>
+                                <button>delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
