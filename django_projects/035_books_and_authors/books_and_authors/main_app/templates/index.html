@@ -7,6 +7,7 @@
     <title>{% if page_type == "books" %}Books{% else %}Authors{% endif %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
     <div class="container">
@@ -35,7 +36,7 @@
             {% endif %}
         </div>
         <div class="col">
-            <table>
+            <table id="data_table">
                 <thead>
                     <th>ID</th>
                     <th>{%if page_type == "books" %}Title{% else %}Name{% endif %}</th>
@@ -45,7 +46,7 @@
                     {% for item in table_data %}
                     <tr>
                         <td>{{ item.id }}</td>
-                        <td><a href="/{{ page_type }}/{{ item.id }}">{%if page_type == "books" %}{{ item.title }}{% else %}{{ item.first_name }} {{item.last_name}}{% endif %}</a></td>
+                        <td><a href="/{{ page_type }}/{{ item.id }}">{% if page_type == "books" %}{{ item.title }}{% else %}{{ item.first_name }} {{item.last_name}}{% endif %}</a></td>
                         <td>
                             <form action="/{{ page_type }}/delete" method="POST">
                                 {% csrf_token %}
