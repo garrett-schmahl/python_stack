@@ -4,37 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if style == "books" %}{{ details_data.title }}{% else %}{{ details_data.first_name }} {{ details_data.last_name}}{% endif %}</title>
+    <title>{% if page_type == "books" %}{{ details_data.title }}{% else %}{{ details_data.first_name }} {{ details_data.last_name}}{% endif %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <div class="container col">
-        <h1>{% if style == "books" %}{{ details_data.title }}{% else %}{{ details_data.first_name }} {{ details_data.last_name}}{% endif %}</h1>
+        <div class="title_row">
+            <h1><a href="/{{ page_type }}/{{ details_data.id }}/previous"><</a>
+            <p>{% if page_type == "books" %}{{ details_data.title }}{% else %}{{ details_data.first_name }} {{ details_data.last_name}}{% endif %}</p>
+            <a href="/{{ page_type }}/{{ details_data.id }}/next">></a></h1>
+        </div>
         <p><span>ID: </span>{{details_data.id}}</p>
-        <form action="/{{ style }}/{{ details_data.id }}/update" method="POST">
+        <form action="/{{ page_type }}/{{ details_data.id }}/update" method="POST">
             {% csrf_token %}
-            <label for="description_note_box">{% if style == "books" %}Description{% else %}Notes{% endif %}</label>
-            <textarea name="description_box" rows="4" id="description_note_box">{% if style == "books" %}{{ details_data.description }}{% else %}{{ details_data.notes }}{% endif %}</textarea>
+            <label for="description_note_box">{% if page_type == "books" %}Description{% else %}Notes{% endif %}</label>
+            <textarea name="description_box" rows="4" id="description_note_box">{% if page_type == "books" %}{{ details_data.description }}{% else %}{{ details_data.notes }}{% endif %}</textarea>
             <button class="submit_new">Update</button>
         </form>
-        <label>{% if style == "books" %}Authors:{% else %}Books:{% endif %}</label>
+        <label>{% if page_type == "books" %}Authors:{% else %}Books:{% endif %}</label>
         <ul>
-            {% if style == "books" %}
+            {% if page_type == "books" %}
                 {% for author in details_data.authors.all %}
-                    <li><a href="/authors/{{ author.id }}">{{ author.first_name }} {{ author.last_name }}</a> <a href="/{{ style }}/{{ author.id }}/{{ details_data.id }}/disconnect">remove</a></li>
+                    <li><a href="/authors/{{ author.id }}">{{ author.first_name }} {{ author.last_name }}</a> <a href="/{{ page_type }}/{{ author.id }}/{{ details_data.id }}/disconnect">remove</a></li>
                 {% endfor %}
             {% else %}
                 {% for book in details_data.books.all %}
-                    <li><a href="/books/{{ book.id }}">{{book.title}}</a> <a href="/{{ style }}/{{ details_data.id }}/{{ book.id }}/disconnect">remove</a></li>
+                    <li><a href="/books/{{ book.id }}">{{book.title}}</a> <a href="/{{ page_type }}/{{ details_data.id }}/{{ book.id }}/disconnect">remove</a></li>
                 {% endfor %}
             {% endif %}
         </ul>
-        <form action="/{{ style }}/{{ details_data.id }}/connect" method="POST" id="add_attribute">
+        <form action="/{{ page_type }}/{{ details_data.id }}/connect" method="POST" id="add_attribute">
             {% csrf_token %}
             <select name="drop_down_select">
                 {% for key in drop_down_data %}
-                    {% if style == "books" %}
+                    {% if page_type == "books" %}
                         {% if key not in details_data.authors.all %}
                             <option value={{ key.id }}>{{ key.first_name }} {{ key.last_name }}</option>
                         {% endif %}
@@ -47,7 +51,7 @@
             </select>
             <button>Add</button>
         </form>
-        <a href="/{{ style }}">Back to {{ style }}</a>
+        <a href="/{{ page_type }}">Back to {{ page_type }}</a>
     </div>
 </body>
 </html>
