@@ -14,6 +14,13 @@
             <h1 class="col">New Show </h1>
             <a href="/shows" class="col text-end">Go Back</a>
         </div>
+        {% if messages %}
+            <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+            </ul>
+        {% endif %}
         <form action="/shows/create" method="post">
         {% csrf_token %}
         <div class="row mb-3">
@@ -41,11 +48,6 @@
         <div class="row mb-3 justify-content-center">
             <button type="submit" class="col-md-auto">Create</button>
             
-        </div>
-        <div class="row justify-content-center"></div>
-            <div class="col-md-auto">
-                <a href="/shows/{{ show_to_edit.id }}" >Go to Show</a>
-            </div>
         </div>
     </form>
 </div>
