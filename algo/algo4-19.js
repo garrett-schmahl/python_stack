@@ -18,9 +18,6 @@
 //add to remaingSum
 //compare to sum
 //if true, log as balanceIndex
-//create new loop, starting at balanceIndex
-//shift each value over 1 to the left
-//pop the last value
 //return array
 
 
@@ -43,7 +40,6 @@ const expected2 = false;
 function balancePoint(nums){
     let sumofArray = nums[0]
     for (let i = 1; i < nums.length ;i++){
-        console.log("this is happening")
         sumofArray += nums[i]
         let remainingArraySum = 0
         for (let j=i+1; j < nums.length; j++){
@@ -79,4 +75,31 @@ const expected1 = 2;
 const nums2 = [9, 9];
 const expected2 = -1;
 
-function balanceIndex(nums) {}
+function balanceIndex(nums) {
+  if (nums.length < 3){
+    return -1
+  }
+  let balanceIndex = 0
+  if (nums.length === 3){
+    if (nums[0] === nums[2]){
+      return 1
+    } else{
+      return -1
+    }
+  }
+  let sumofArray = 0
+  for (let i = 1; i < nums.length ;i++){
+    sumofArray += nums[i-1]
+    let remainingArraySum = 0
+    for (let j=i+1; j < nums.length; j++){
+      remainingArraySum +=nums[j]
+    }
+    if (remainingArraySum === sumofArray){
+      return i
+    }
+  }
+  return -1
+}
+
+console.log(balanceIndex(nums1))
+console.log(balanceIndex(nums2))
