@@ -38,3 +38,8 @@ def log_in_user(request):
         user = User.objects.get(email=request.POST['login_email'])
         request.session['uuid'] = user.id
         return redirect('/thewall')  #TODO:THIS
+
+
+def log_out(request):
+    del request.session['uuid']
+    return redirect("/")
