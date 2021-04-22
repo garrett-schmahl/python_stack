@@ -4,7 +4,6 @@ from datetime import datetime
 import re
 
 
-
 class User_Manager(models.Manager):
     def registration_validator(self, post_data):
         errors = {}
@@ -33,6 +32,19 @@ class User_Manager(models.Manager):
             elif datetime.now().year - form_date.year < 13:
                 errors["date"] = "You must be at least 13."
         return errors
+
+
+    def login_validator(self, post_data):
+        errors = {}
+        user_list = User.objects.filter(email = post_data['email_input'])
+        if len(user_list) > 0:
+            user = user_list[0]
+            if not bcrypt.checkpw(post_data['password_input'].encode(), user.password.encode()):
+                errors['password'] = "Invalid Credentials"
+        else:
+            errors['email'] = "Invalid Credentials"
+        return errors
+
 
 class User(models.Model):
     first_name=models.CharField(max_length=45)

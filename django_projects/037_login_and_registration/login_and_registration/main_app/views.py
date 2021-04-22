@@ -25,13 +25,30 @@ def create_user(request):
             password = hash_pw
         )
         request.session['uuid'] = new_user.id
-        return redirect('/user/login')
+        return redirect('/landing')
 
 
 def log_in_user(request):
-    
-    return redirect('/success')
+    errors = User.objects.login_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect("/")
+    else:
+        user = User.objects.get(email=request.POST['email_input'])
+        request.session['uuid'] = user.id
+        return redirect('/landing')
 
 
 def log_in_landing(request):
-    return render(request, "main_app/landing.html")
+    if "uuid" not in request.session:
+        return redirect("/")
+    context = {
+        "user": User.objects.get(id = request.session['uuid']),
+    }
+    return render(request, "main_app/landing.html", context)
+
+
+def log_out(request):
+    del request.session['uuid']
+    return redirect("/")
