@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ book.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main_app/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome, {{ user.first_name }}!</h1>
+            <a href="/user/logout">Log Out</a>
+        </div>
+        <hr>
+        <div class="main_content_row">
+            <div class="col">
+                <h2> {{ book.title }} </h2>
+                <p>Written by: {{ book.author }}</p>
+                <p>Added by: {{ book.uploaded_by.first_name }} {{ book.uploaded_by.last_name }}</p>
+                <p>Added on: {{ book.created_at}}</p>
+                <p>Last updates: {{ book.updated_at }}</p>
+                <p>Description:</p>
+                <p>{{ book.description }}</p>
+            </div>
+            <div class="col">
+                <h2>Users Who Like This Book:</h2>
+                <ul>
+                    {% for user in book.liked_by.all %}
+                    <li>{{ user.first_name }} {{ user.last_name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

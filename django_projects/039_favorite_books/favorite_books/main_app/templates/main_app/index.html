@@ -36,11 +36,13 @@
                     <a href="/favorite_books/{{ book.id }}/view">{{ book.title }}</a>
                     <p>Written by {{ book.author }}</p>
                     <p>Added by {{ book.uploaded_by.first_name }} {{ book.uploaded_by.last_name }}</p>
-                    {% if book.id == user.favorite_books %}
+                    {% if book.id == favorite.id %} RIGHT HERE RIGHT HERE
                         <p>This is one of your favorites</p>
-                    {% else %}
-                        <a href="/favorite_books/{{ book.id}}/favorite/{{ user.id }}">Add to Favorites</a>
                     {% endif %}
+
+
+                    <a href="/favorite_books/{{ book.id}}/like">Add to Favorites</a>
+                    
                 </div>
                 {% endfor %}
             </div>
