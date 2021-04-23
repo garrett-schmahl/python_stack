@@ -25,7 +25,7 @@ def create_user(request):
             password = hash_pw
         )
         request.session['uuid'] = new_user.id
-        return redirect('/thewall') #TODO:THIS
+        return redirect('/favorite_books') #TODO:THIS
 
 
 def log_in_user(request):
@@ -37,7 +37,7 @@ def log_in_user(request):
     else:
         user = User.objects.get(email=request.POST['login_email'])
         request.session['uuid'] = user.id
-        return redirect('/thewall')  #TODO:THIS
+        return redirect('/favorite_books')  #TODO:THIS
 
 
 def log_out(request):

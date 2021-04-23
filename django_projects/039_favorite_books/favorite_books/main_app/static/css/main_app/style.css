@@ -1,0 +1,29 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+.container{
+    display:flex;
+    flex-direction:column;
+    width: 90%;
+    margin:auto;
+}
+.header{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+.main_content_row{
+    display:flex;
+    flex-direction:row;
+}
+.col{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    margin:20px;
+}
+.col form{
+    display:flex;
+    flex-direction: column;
+}
