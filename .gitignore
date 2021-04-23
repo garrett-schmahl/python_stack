@@ -6,3 +6,4 @@ venv/
 __pycache__/
 .vscode/
 db.sqlite3
+django_projects/040_exam/schmahl_garrett_python_exam.zip
