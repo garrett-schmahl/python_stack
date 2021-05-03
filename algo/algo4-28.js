@@ -20,10 +20,8 @@ function binarySearch(sortedNums, searchNum){
         return true
     } else if (sortedNums[searchIndex] > searchNum){
         sortedNums = sortedNums.slice(0, searchIndex)
-        console.log("lower"+sortedNums)
     } else if (sortedNums[searchIndex] < searchNum){
         sortedNums = sortedNums.slice(searchIndex+1, sortedNums.length)
-        console.log("higher"+sortedNums)
     }
     return binarySearch(sortedNums, searchNum)
 }
