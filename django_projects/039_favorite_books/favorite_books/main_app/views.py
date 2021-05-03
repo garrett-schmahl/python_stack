@@ -38,5 +38,5 @@ def view_book(request, book_id):
 
 def like_book(request, book_id):
     user = User.objects.get(id=request.session['uuid'])
-    Book.objects.get(id=new_book.id).favorite_of.add(user)
+    Book.objects.get(id=book_id).favorite_of.add(user)
     return redirect ('/favorite_books')

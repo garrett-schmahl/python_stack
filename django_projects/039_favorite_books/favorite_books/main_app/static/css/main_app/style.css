@@ -27,3 +27,7 @@
     display:flex;
     flex-direction: column;
 }
+
+.book_div{
+    margin-bottom:20px;
+}
